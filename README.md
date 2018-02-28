@@ -1,0 +1,2 @@
+# nosqltalk
+tlak about nosql

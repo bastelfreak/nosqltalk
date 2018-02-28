@@ -1,2 +1,2 @@
 # nosqltalk
-tlak about nosql
+short presentation about noSQL

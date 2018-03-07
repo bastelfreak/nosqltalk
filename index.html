@@ -204,7 +204,42 @@ class: middle, center, inverse
 
 * best for big data
 ]
+---
 
+.left-column[
+## What is NoSQL?
+### Code example
+]
+.right-column[
+
+* insert
+```json 
+db.awesome.insertOne ({
+  firstname: "Marcel",
+  lastname: "Reuter",
+  birthdate: "21.05.1993"
+  })
+```
+* result
+```json
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("5aa04d0f4c2a329b3900585d")
+}
+```
+
+* select
+```json
+db.awesome.find ({})
+{ 
+  "_id" : ObjectId("5aa04d0f4c2a329b3900585d"),
+  "firstname" : "Marcel",
+  "lastname" : "Reuter",
+  "birthdate" : "21.05.1993"
+}
+```
+
+]
 ---
 
 .left-column[

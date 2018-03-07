@@ -149,15 +149,41 @@ class: center, middle, inverse
 
 # Content
 
-1. What is NoSQL?
+1. What we know and what is the problem?
+
+2. What is NoSQL?
   * forms
 
-2. Why NoSQL?
+3. Why NoSQL?
   * examples
 
-3. SQL vs noSQL
+4. SQL vs noSQL
 
-4. How to save large files?
+5. How to save large files?
+
+---
+
+.left-column[
+## What we know and what is the problem?
+]
+.right-column[
+# SQL
+* relational database
+
+* Primary - Foreign Keys
+
+* select, alter, join, delete
+
+* large data can affect the performance
+
+  * alter table command on a 50gb big table can take up to 6 days
+
+* plan the structure before
+
+
+* Solution will be noSQL
+]
+
 ---
 
 class: middle, center, inverse
@@ -216,6 +242,8 @@ class: middle, center, inverse
 
 * Basic avability, Soft-State, Eventual consistency
 
+* no scheme
+
 ]
 
 ---
@@ -244,16 +272,22 @@ class: middle, center, inverse
 
 .right-column[
 ##sql
+
 * ACID complaince
 
 * data will be structed
 
+* plan your environment
+
 ##nosql
+
 * BASE
 
 * can store large datas without structure
 
 * Rapid development
+
+* no alter table command.. missing schema
 
 ]
 

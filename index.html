@@ -149,71 +149,95 @@ class: center, middle, inverse
 
 # Content
 
-1. What we know and what's the problem?
+1. SQL
+  * DDL,DML,DCL
+  * advantages / disadvantages
+  * usecases
 
-2. What is NoSQL?
-  * code examples
-  * forms
+2. NoSQL
+  * DDL,DML
+  * advantages / disadvantages
+  * usecases
 
-3. Why NoSQL?
-  * examples
+3. NoSQL Forms
+  * Document stores
+  * Graph database
+  * Key-Value Stores
 
-4. SQL vs noSQL
+---
+.left-column[
+## SQL
+### DLL,DML,DCL
+]
+.right-column[
+* Data definition Language
+  * create, alter, drop
 
-5. How to save large files?
+### create
+```sql
+create table 'tablename';
+```
+
+* Data modulation Language
+  * select, update, insert
+
+### select
+```sql
+select * from 'table name';
+```
+
+* Data control language
+  * grant, revoke
+
+### grant
+```sql
+grant select,update on Table 'tablename'; 
+```
+]
 
 ---
 
 .left-column[
-## What we know and what's the problem?
+## SQL
+### DLL,DML,DCL
+### advantages / disadvantages
 ]
 .right-column[
-# SQL
-* relational database
+advantages
+* easy to use
 
-* Primary - Foreign Keys
-
-* select, alter, join, delete
-
-* large data can affect the performance
-
-  * alter table command on a 50gb big table can take up to 6 days
-
-* plan the structure before
-
-
-* Solution will be noSQL
+disadvantages
+* each transaction on a table, block this table (isolation)
 ]
-
----
-
-class: middle, center, inverse
-
-## NoSQL .. has nothing to do with sql?
 
 ---
 
 .left-column[
-## What is NoSQL?
+## SQL
+### DLL,DML,DCL
+### advantages / disadvantages
+### usecases
 ]
 .right-column[
-* not only sql
-
-* no relational database structure
-
-* json, xml
-
-* best for big data
+* sql is used from many companys, how need a relational database
 ]
 ---
 
 .left-column[
-## What is NoSQL?
-### Code example
+## NoSQL
+### DDL,DML
 ]
 .right-column[
+* Data definition Language
 
-* insert
+### create
+```json
+db.createCollection ("awesome")
+```
+
+* Data modulation Language
+
+### insert
 ```json 
 db.awesome.insertOne ({
   firstname: "Marcel",
@@ -221,15 +245,8 @@ db.awesome.insertOne ({
   birthdate: "21.05.1993"
   })
 ```
-* result
-```json
-{
-	"acknowledged" : true,
-	"insertedId" : ObjectId("5aa04d0f4c2a329b3900585d")
-}
-```
 
-* select
+### select
 ```json
 db.awesome.find ({})
 { 
@@ -239,110 +256,141 @@ db.awesome.find ({})
   "birthdate" : "21.05.1993"
 }
 ```
+]
+---
+
+.left-column[
+## NoSQL
+### DDL,DML
+### advantages / disadvantages
+]
+.right-column[
 
 ]
 ---
 
 .left-column[
-## What is NoSQL?
-### forms
+## NoSQL
+### DDL,DML
+### advantages / disadvantages
+### usecases
 ]
 .right-column[
-* document database
+* best for large datas, where algorithm will chech the datas
+]
+
+---
+
+.left-column[
+## NoSQL Forms
+]
+
+.right-column[
+* document store
 
 * graph database
-
-* column store
 
 * key-value model
 ]
 
 ---
 
-class: middle, center, inverse
-
-## Why should we use NoSQL?
-
----
-
 .left-column[
-## Why NoSQL?
+## NoSQL Forms
+### document store
 ]
 
 .right-column[
-* faster for large datas
+* MongoDB, Lotus Notes(IBM)
 
-* high avability (cluster)
+* datas will be stored as documents
 
-* scaleable (horizontal)
+* key-value pairs inside the documents
 
-* Basic avability, Soft-State, Eventual consistency
+* no schema needed
 
-* no scheme
+### Advantages
+* views can be directly created, there is no 
+  interactions with other tables needed
+* scalebale 
+* best use for HTML forms
 
-]
-
----
-
-.left-column[
-## Why NoSQL?
-### - examples
-]
-
-.right-column[
-* Cassandra
-
-* MongoDB
-
-* Apache CouchDB
-
-* Amazon DynamoDB
+### Disadvantages
+* no constraints and triggers
+* there must be a check implemented in the programm for the entered datas
 
 ]
 
 ---
 
 .left-column[
-## sql vs nosql
+## NoSQL Forms
+### document store
 ]
 
 .right-column[
-##sql
-
-* ACID complaince
-
-* data will be structed
-
-* plan your environment
-
-##nosql
-
-* BASE
-
-* can store large datas without structure
-
-* Rapid development
-
-* no alter table command.. missing schema
+### Usecases
+* webapplications
+* best way to save unstructured datas
 
 ]
 
 ---
 
 .left-column[
-## How to save large files?
+## NoSQL Forms
+### document store
+### graph database
 ]
 
 .right-column[
-* large files (16mb) breaking into smaller files
+* Neo4j
 
-* BSON
+* Edge(relation) and Nodes
 
-* will generate binary code
+* easy traverse can handle expensive joins
 
-* .mov, .jpg, .png, etc.
+### Advantages
+* better performance as for relation databases
+* no rekursive nested joins needed
+*  save/work with connected informations
 
-* gridfs
+### Disadvantages
+* there is no generic inquiry language to get informations
+* many graphmodels and inquiry language
+
+### Usecases
+* only for databases, where the relations of datas are importend
+* google and twitter (big companys)
+
+]
+
+---
+
+.left-column[
+## NoSQL Forms
+### document store
+### graph databse
+### key-value model
+]
+
+.right-column[
+* Redis 
+
+### Advantages
+* scaleable
+* datas are availible, if schema will be modified
+* for easy schema
+
+### Disadvantages
+* can't use complex requests
+* not usable for complex object-relations
+
+### Usecase
+* Amazon shopping card (Amazon Dynamo)
+
+* can be used at every system, where data must be high availible
+  and a short reaction time
 
 ]
 
@@ -353,6 +401,10 @@ class: middle, center, inverse
 ## Summary
 ### Think about what you want and then what you will use!
 
+
+#### sources:
+(Universität Leipzig, Fakultät für Mathematik, Abteilung Datenbanken,
+Tran Ngoc Ha)
 .footnote[&copy; Marcel Reuter]
     </textarea>
     <script src="remark-latest.min.js">

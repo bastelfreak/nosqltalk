@@ -191,7 +191,7 @@ select * from 'table name';
 
 ### grant
 ```sql
-grant select,update on Table 'tablename'; 
+grant select,update on Table 'tablename';
 ```
 ]
 
@@ -238,7 +238,7 @@ db.createCollection ("awesome")
 * Data Manipulation Language
 
 ### insert
-```json 
+```json
 db.awesome.insertOne ({
   firstname: "Marcel",
   lastname: "Reuter",
@@ -249,7 +249,7 @@ db.awesome.insertOne ({
 ### select
 ```json
 db.awesome.find ({})
-{ 
+{
   "_id" : ObjectId("5aa04d0f4c2a329b3900585d"),
   "firstname" : "Marcel",
   "lastname" : "Reuter",
@@ -310,9 +310,9 @@ db.awesome.find ({})
 * no schema needed
 
 ### Advantages
-* views can be directly created, there is no 
+* views can be directly created, there is no
   interactions with other tables needed
-* scalebale 
+* scalebale
 * best use for HTML forms
 
 ### Disadvantages
@@ -375,7 +375,7 @@ db.awesome.find ({})
 ]
 
 .right-column[
-* Redis 
+* Redis
 
 ### Advantages
 * scaleable
